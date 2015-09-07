@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Password digest:
+  = @user.password_digest
+%p
+  %b Photo path:
+  = @user.photo_path
+%p
+  %b Sex:
+  = @user.sex
+%p
+  %b Birthday:
+  = @user.birthday
+%p
+  %b Nationality:
+  = @user.nationality
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
