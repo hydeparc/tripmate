@@ -12,6 +12,12 @@ production:
   database: <%= APP_NAME %>_development
   pool: 5
 
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= APP_NAME %>_staging
+  pool: 5
+
 production:
   adapter: postgresql
   encoding: unicode
