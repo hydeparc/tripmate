@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_secure_password
   MIN_PASSWORD_LENGTH = 6
   validates :password, length: { minimum: MIN_PASSWORD_LENGTH }
+  enum sex: { male: 0, female: 1 }
 end
