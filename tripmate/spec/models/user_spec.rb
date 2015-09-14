@@ -112,5 +112,44 @@ RSpec.describe User, type: :model do
         end
       end
     end
+
+    describe 'birthday' do
+      describe 'presence' do
+        context 'when it is blank' do
+          let!(:blank_birthday_user) { FactoryGirl.build(:user, birthday: "") }
+
+          it 'is invalid' do
+            expect(blank_birthday_user).to be_invalid
+            expect(blank_birthday_user.errors[:birthday]).to be_present
+          end
+        end
+      end
+    end
+
+    describe 'sex' do
+      describe 'presence' do
+        context 'when it is blank' do
+          let!(:blank_sex_user) { FactoryGirl.build(:user, sex: "") }
+
+          it 'is invalid' do
+            expect(blank_sex_user).to be_invalid
+            expect(blank_sex_user.errors[:sex]).to be_present
+          end
+        end
+      end
+    end
+
+    describe 'nationality' do
+      describe 'presence' do
+        context 'when it is blank' do
+          let!(:blank_nationality_user) { FactoryGirl.build(:user, nationality: "") }
+
+          it 'is invalid' do
+            expect(blank_nationality_user).to be_invalid
+            expect(blank_nationality_user.errors[:nationality]).to be_present
+          end
+        end
+      end
+    end
   end
 end
