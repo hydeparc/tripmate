@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     describe 'name' do
       describe 'presence' do
         context "when it is blank" do
-          let!(:blank_name_user) { FactoryGirl.build(:user, name: "") }
+          let(:blank_name_user) { FactoryGirl.build(:user, name: "") }
 
           it "is invalid" do
             expect(blank_name_user).to be_invalid
@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
 
       describe 'presence' do
         context 'when it is blank' do
-          let!(:blank_email_user) { FactoryGirl.build(:user, email: "") }
+          let(:blank_email_user) { FactoryGirl.build(:user, email: "") }
 
           it 'is invalid' do
             expect(blank_email_user).to be_invalid
@@ -53,7 +53,7 @@ RSpec.describe User, type: :model do
 
       describe 'format' do
         context 'when it does not follow email format' do
-          let!(:invalid_address_user) { FactoryGirl.create(:user)}
+          let(:invalid_address_user) { FactoryGirl.create(:user)}
           let(:addresses) { %w[user@foo,com user_at_foo.org example.user@foo.
                                foo@bar_baz.com foo@bar+baz.com foo@bar..com] }
           it 'is invalid' do
@@ -70,7 +70,7 @@ RSpec.describe User, type: :model do
     describe 'password' do
       describe 'presence' do
         context 'when it is blank' do
-          let!(:blank_password_user) { FactoryGirl.build(:user, password: "") }
+          let(:blank_password_user) { FactoryGirl.build(:user, password: "") }
 
           it 'is invalid' do
             expect(blank_password_user).to be_invalid
@@ -81,8 +81,8 @@ RSpec.describe User, type: :model do
 
       describe 'length' do
         context 'when it is less than minimum length' do
-          let!(:less_than_min_length) { "a" * (User::MIN_PASSWORD_LENGTH - 1) }
-          let!(:less_length_password_user) do
+          let(:less_than_min_length) { "a" * (User::MIN_PASSWORD_LENGTH - 1) }
+          let(:less_length_password_user) do
             FactoryGirl.build(:user,
               password: less_than_min_length,
               password_confirmation: less_than_min_length
@@ -98,7 +98,7 @@ RSpec.describe User, type: :model do
 
       describe 'consistency' do
         context 'when password is different from password_confirmation' do
-          let!(:mismatching_passwords_user) do
+          let(:mismatching_passwords_user) do
             FactoryGirl.build(:user,
               password: "password",
               password_confirmation: "anotherpassword"
@@ -116,7 +116,7 @@ RSpec.describe User, type: :model do
     describe 'birthday' do
       describe 'presence' do
         context 'when it is blank' do
-          let!(:blank_birthday_user) { FactoryGirl.build(:user, birthday: "") }
+          let(:blank_birthday_user) { FactoryGirl.build(:user, birthday: "") }
 
           it 'is invalid' do
             expect(blank_birthday_user).to be_invalid
@@ -129,7 +129,7 @@ RSpec.describe User, type: :model do
     describe 'sex' do
       describe 'presence' do
         context 'when it is blank' do
-          let!(:blank_sex_user) { FactoryGirl.build(:user, sex: "") }
+          let(:blank_sex_user) { FactoryGirl.build(:user, sex: "") }
 
           it 'is invalid' do
             expect(blank_sex_user).to be_invalid
@@ -142,7 +142,7 @@ RSpec.describe User, type: :model do
     describe 'nationality' do
       describe 'presence' do
         context 'when it is blank' do
-          let!(:blank_nationality_user) { FactoryGirl.build(:user, nationality: "") }
+          let(:blank_nationality_user) { FactoryGirl.build(:user, nationality: "") }
 
           it 'is invalid' do
             expect(blank_nationality_user).to be_invalid
