@@ -1,2 +1,14 @@
-%h1 Tripmate
-%h2 Tripmateとは
+%main#frontPage
+
+ %h1.logo
+   = image_tag "logo.png", size: "115x22", alt: "logo"
+
+ .frontPhoto_content
+   %h2.intro Find the music you love. Discover new tracks.<br />Connect directly with your favorite artists.
+   .frontPhoto_action
+     %span
+       %input{:type=>"text"}
+
+ .frontPhoto_sac
+   = link_to 'Sign in', '#', class: 'btn btn-default'
+   = link_to 'Create account', '#', class: 'btn btn-warning'
