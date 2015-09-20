@@ -1,3 +1,31 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//トップページ
+#frontPage{
+    position: relative;
+    background-image: url(main.jpg);
+    background-size: cover;
+    //下はアテやで、あとで消し去るで
+    height: 450px;
+    .logo{
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        margin-top: 0;
+    }
+
+    .frontPhoto_content{
+        position: absolute;
+        bottom: 45px;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+    }
+
+    .frontPhoto_sac{
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+}
