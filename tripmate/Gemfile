@@ -17,6 +17,7 @@ gem 'twitter-bootstrap-rails'
 gem 'haml-rails'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth-facebook'
 
 
 group :development, :test do
