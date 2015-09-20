@@ -18,7 +18,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-facebook'
-
+gem 'devise'
 
 group :development, :test do
   gem 'spring'

@@ -1,4 +1,4 @@
-Rails.application.config.middleware.use Omniauth::Builder do
+Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'],
   :client_options => {
     :site => 'https://graph.facebook.com/v2.0',
